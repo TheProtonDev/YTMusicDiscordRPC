@@ -1,5 +1,7 @@
 # YouTube Music Discord Rich Presence
 
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/CWX50jh/image.png" alt="image" border="0"></a>
+<a href="https://ibb.co/Vm2FZY6"><img src="https://i.ibb.co/cLDWHhq/image.png" alt="image" border="0"></a>
 ### This is just a simple little script primarily targeted towards Arch Linux users to fetch the currently playing song and set it as a Discord Rich Presence Status
 
 ## Running It:
