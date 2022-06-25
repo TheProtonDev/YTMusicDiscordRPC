@@ -7,7 +7,7 @@ from pypresence import Presence
 
 def main():
     CHECK_COOLDOWN = 15  # The amount of seconds to wait between status updates,
-    # I'd recomend leaving this value alone unless you are having issues
+    # I'd recommend leaving this value alone unless you are having issues
 
     # This is the Client ID of a Rich Presence Application I made, feel free to try it or change it and make your own
     # at: https://discord.com/developers/applications
@@ -16,10 +16,14 @@ def main():
     try:
         while True:
             if is_playing():
-                formatted_str = f"{get_artist()} - {get_title()}"
-                search_str = f"{get_artist()}+{get_title()}".replace(" ", "+")
-                RPC.update(state=formatted_str)
-                print(f"Updated RPC Status To: {formatted_str}")
+                if is_song_title_already_formatted(get_title()):
+                    formatted_str = get_title()
+                    RPC.update(state=formatted_str)
+                    print(f"Updated RPC Status To: {formatted_str}")
+                else:
+                    formatted_str = f"{get_artist()} - {get_title()}"
+                    RPC.update(state=formatted_str)
+                    print(f"Updated RPC Status To: {formatted_str}")
                 sleep(CHECK_COOLDOWN)
             else:
                 RPC.clear()
